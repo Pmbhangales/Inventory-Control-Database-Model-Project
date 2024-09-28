@@ -1,0 +1,39 @@
+INSERT INTO categories VALUES (1, 'Electronics');
+INSERT INTO categories VALUES (2, 'Clothing');
+INSERT INTO categories VALUES (3, 'Grocery');
+INSERT INTO categories VALUES (4, 'Sports');
+INSERT INTO categories VALUES (5, 'Furniture');
+INSERT INTO categories VALUES (6, 'Footwear');
+INSERT INTO categories VALUES (7, 'Toys');
+INSERT INTO categories VALUES (8, 'Books');
+INSERT INTO categories VALUES (9, 'Appliances');
+INSERT INTO categories VALUES (10, 'Beauty Products');
+INSERT INTO categories VALUES (11, 'Stationery');
+INSERT INTO categories VALUES (12, 'Medical');
+INSERT INTO categories VALUES (13, 'Automotive');
+INSERT INTO categories VALUES (14, 'Jewelry');
+INSERT INTO categories VALUES (15, 'Accessories');
+
+
++-------------+-----------------+
+| category_id | category_name   |
++-------------+-----------------+
+|           1 | Electronics     |
+|           2 | Clothing        |
+|           3 | Grocery         |
+|           4 | Sports          |
+|           5 | Furniture       |
+|           6 | Footwear        |
+|           7 | Toys            |
+|           8 | Books           |
+|           9 | Appliances      |
+|          10 | Beauty Products |
+|          11 | Stationery      |
+|          12 | Medical         |
+|          13 | Automotive      |
+|          14 | Jewelry         |
+|          15 | Accessories     |
++-------------+-----------------+
+15 rows in set (0.00 sec)
+
+--Use Select * from categories; to show the table values;
