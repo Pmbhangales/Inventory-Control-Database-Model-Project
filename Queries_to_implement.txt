@@ -1,0 +1,57 @@
+1)  What are all the available products in the store?
+--Retrieve all Products:
+
+2) Which customers have items in their cart and what are those items?
+--Retrieve all Customers and their Cart Details:
+
+3) What are the details of a specific transaction and its corresponding invoice?
+--Retrieve Details of a Specific Transaction and Corresponding Invoice:
+
+4) Which products have low stock (less than 5 units)?
+--Retrieve Stock of Products:
+
+5)  What are the items in the cart for a specific customer?
+--Retrieve Customer Cart Details for a Specific Customer:
+
+6) Which products belong to a specific category?
+--Retrieve Products by a Specific Category:
+
+7)  What transactions have been made by a specific customer?
+--Retrieve All Transactions Made by a Specific Customer:
+
+8) What are all the products along with their respective brands?
+--Retrieve All Products with Their Corresponding Brand:
+
+9) Which stores are located in a specific city?
+--Retrieve stores Details Based on their Location:
+
+10) What are the invoices related to a specific invoice?
+--Retrieve All Invoices for a Specific invoice:
+ 
+11) Which products have prices greater than a specific amount?
+--Retrieve Products with Prices Above a Certain Value:
+
+12) What are the details of customer carts along with the product names?
+--Retrieve Customer Cart Details with Product Names:
+
+13) What is the total revenue generated from all sales?
+--Retrieve Total Revenue Generated from Sales:
+
+14) What is the total revenue generated from all sales?
+--Retrieve Total Revenue Generated from Sales:
+
+15) How many products does each brand offer?
+--Retrieve Brands and the Number of Products They Offer:
+
+16) Which customers have not made any transactions?
+--Retrieve Customers with No Transactions:
+
+17) What are the details of customers along with the items in their carts?
+--Retrieve Customer Details Along with Their Cart Items:
+
+18) What are the products along with their brand and category names?
+--Retrieve Products with Brand and Category Names:
+
+ 19) What are the invoices along with the details of the customers who made them?
+--Retrieve Invoices with Corresponding Customer Details:
+
