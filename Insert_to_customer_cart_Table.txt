@@ -1,0 +1,39 @@
+INSERT INTO customer_cart VALUES (1, 'Vidit', 9999111111);
+INSERT INTO customer_cart VALUES (2, 'Harsh', 8888222233);
+INSERT INTO customer_cart VALUES (3, 'Prashant', 7777333344);
+INSERT INTO customer_cart VALUES (4, 'Abhishek', 6666444455);
+INSERT INTO customer_cart VALUES (5, 'Shivani', 9999444466);
+INSERT INTO customer_cart VALUES (6, 'Rachit', 8888555566);
+INSERT INTO customer_cart VALUES (7, 'Meera', 7777666677);
+INSERT INTO customer_cart VALUES (8, 'Rahul', 6666777788);
+INSERT INTO customer_cart VALUES (9, 'Pooja', 9999888899);
+INSERT INTO customer_cart VALUES (10, 'Aman', 8888999911);
+INSERT INTO customer_cart VALUES (11, 'Ajay', 7777111122);
+INSERT INTO customer_cart VALUES (12, 'Deepa', 6666222233);
+INSERT INTO customer_cart VALUES (13, 'Ravi', 9999333344);
+INSERT INTO customer_cart VALUES (14, 'Neha', 8888111133);
+INSERT INTO customer_cart VALUES (15, 'Suresh', 7777444455);
+
+
++-------------+---------------+----------------+
+| customer_id | customer_name | contact_number |
++-------------+---------------+----------------+
+|           1 | Vidit         |     9999111111 |
+|           2 | Harsh         |     8888222233 |
+|           3 | Prashant      |     7777333344 |
+|           4 | Abhishek      |     6666444455 |
+|           5 | Shivani       |     9999444466 |
+|           6 | Rachit        |     8888555566 |
+|           7 | Meera         |     7777666677 |
+|           8 | Rahul         |     6666777788 |
+|           9 | Pooja         |     9999888899 |
+|          10 | Aman          |     8888999911 |
+|          11 | Ajay          |     7777111122 |
+|          12 | Deepa         |     6666222233 |
+|          13 | Ravi          |     9999333344 |
+|          14 | Neha          |     8888111133 |
+|          15 | Suresh        |     7777444455 |
++-------------+---------------+----------------+
+15 rows in set (0.00 sec)
+
+--Use Select * from customer_cart; to show the table values;
