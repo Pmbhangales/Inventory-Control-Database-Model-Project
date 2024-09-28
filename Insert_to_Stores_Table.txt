@@ -1,0 +1,39 @@
+INSERT INTO stores VALUES (1, 'Ram Kumar', 'Katpadi Vellore', 9999999999);
+INSERT INTO stores VALUES (2, 'Rakesh Kumar', 'Chennai', 8888555541);
+INSERT INTO stores VALUES (3, 'Suraj', 'Haryana', 7777555541);
+INSERT INTO stores VALUES (4, 'Mohan Stores', 'Mumbai', 6666333361);
+INSERT INTO stores VALUES (5, 'Anand Mart', 'Pune', 8888555522);
+INSERT INTO stores VALUES (6, 'Krishna Bazaar', 'Delhi', 8888555566);
+INSERT INTO stores VALUES (7, 'Mehta Supermarket', 'Bangalore', 7777444422);
+INSERT INTO stores VALUES (8, 'Saraswati Stores', 'Hyderabad', 6666111122);
+INSERT INTO stores VALUES (9, 'Radhe General', 'Kolkata', 7777777741);
+INSERT INTO stores VALUES (10, 'Shyam Traders', 'Ahmedabad', 8888555551);
+INSERT INTO stores VALUES (11, 'Ganesh Stores', 'Chandigarh', 6666333332);
+INSERT INTO stores VALUES (12, 'Mani Market', 'Lucknow', 8888666622);
+INSERT INTO stores VALUES (13, 'Bala Ji Mart', 'Jaipur', 7777777772);
+INSERT INTO stores VALUES (14, 'Sai General', 'Goa', 7777444421);
+INSERT INTO stores VALUES (15, 'Kisan Market', 'Nashik', 8888222231);
+
+
++----------+-------------------+-----------------+---------------+
+| store_id | store_owner       | store_address   | store_contact |
++----------+-------------------+-----------------+---------------+
+|        1 | Ram Kumar         | Katpadi Vellore |    9999999999 |
+|        2 | Rakesh Kumar      | Chennai         |    8888555541 |
+|        3 | Suraj             | Haryana         |    7777555541 |
+|        4 | Mohan Stores      | Mumbai          |    6666333361 |
+|        5 | Anand Mart        | Pune            |    8888555522 |
+|        6 | Krishna Bazaar    | Delhi           |    8888555566 |
+|        7 | Mehta Supermarket | Bangalore       |    7777444422 |
+|        8 | Saraswati Stores  | Hyderabad       |    6666111122 |
+|        9 | Radhe General     | Kolkata         |    7777777741 |
+|       10 | Shyam Traders     | Ahmedabad       |    8888555551 |
+|       11 | Ganesh Stores     | Chandigarh      |    6666333332 |
+|       12 | Mani Market       | Lucknow         |    8888666622 |
+|       13 | Bala Ji Mart      | Jaipur          |    7777777772 |
+|       14 | Sai General       | Goa             |    7777444421 |
+|       15 | Kisan Market      | Nashik          |    8888222231 |
++----------+-------------------+-----------------+---------------+
+15 rows in set (0.00 sec)
+
+--Use Select * from stores; to show the table values;
