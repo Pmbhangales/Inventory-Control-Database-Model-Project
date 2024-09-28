@@ -1,0 +1,39 @@
+INSERT INTO inv_user VALUES ('vidit@gmail.com', 'Vidit', '1234', '2018-10-31 12:40:00', 'admin');
+INSERT INTO inv_user VALUES ('harsh@gmail.com', 'Harsh', '1111', '2018-10-30 10:20:00', 'manager');
+INSERT INTO inv_user VALUES ('prashant@gmail.com', 'Prashant', '0011', '2018-10-29 10:20:00', 'accountant');
+INSERT INTO inv_user VALUES ('abhishek@gmail.com', 'Abhishek', '9876', '2018-10-28 11:45:00', 'manager');
+INSERT INTO inv_user VALUES ('shivani@gmail.com', 'Shivani', '5555', '2018-10-27 09:30:00', 'cashier');
+INSERT INTO inv_user VALUES ('rachit@gmail.com', 'Rachit', '4321', '2018-10-26 08:25:00', 'admin');
+INSERT INTO inv_user VALUES ('meera@gmail.com', 'Meera', '1112', '2018-10-25 14:55:00', 'salesman');
+INSERT INTO inv_user VALUES ('rahul@gmail.com', 'Rahul', '3344', '2018-10-24 16:30:00', 'cashier');
+INSERT INTO inv_user VALUES ('pooja@gmail.com', 'Pooja', '9988', '2018-10-23 10:00:00', 'accountant');
+INSERT INTO inv_user VALUES ('aman@gmail.com', 'Aman', '5566', '2018-10-22 11:11:00', 'manager');
+INSERT INTO inv_user VALUES ('ajay@gmail.com', 'Ajay', '7788', '2018-10-21 15:15:00', 'salesman');
+INSERT INTO inv_user VALUES ('deepa@gmail.com', 'Deepa', '6655', '2018-10-20 13:20:00', 'admin');
+INSERT INTO inv_user VALUES ('ravi@gmail.com', 'Ravi', '2244', '2018-10-19 09:10:00', 'manager');
+INSERT INTO inv_user VALUES ('neha@gmail.com', 'Neha', '5567', '2018-10-18 17:00:00', 'cashier');
+INSERT INTO inv_user VALUES ('suresh@gmail.com', 'Suresh', '4433', '2018-10-17 08:50:00', 'salesman');
+
+
++--------------------+-----------+----------+---------------------+------------+
+| email              | user_name | password | created_on          | role       |
++--------------------+-----------+----------+---------------------+------------+
+| abhishek@gmail.com | Abhishek  | 9876     | 2018-10-28 11:45:00 | manager    |
+| ajay@gmail.com     | Ajay      | 7788     | 2018-10-21 15:15:00 | salesman   |
+| aman@gmail.com     | Aman      | 5566     | 2018-10-22 11:11:00 | manager    |
+| deepa@gmail.com    | Deepa     | 6655     | 2018-10-20 13:20:00 | admin      |
+| harsh@gmail.com    | Harsh     | 1111     | 2018-10-30 10:20:00 | manager    |
+| meera@gmail.com    | Meera     | 1112     | 2018-10-25 14:55:00 | salesman   |
+| neha@gmail.com     | Neha      | 5567     | 2018-10-18 17:00:00 | cashier    |
+| pooja@gmail.com    | Pooja     | 9988     | 2018-10-23 10:00:00 | accountant |
+| prashant@gmail.com | Prashant  | 0011     | 2018-10-29 10:20:00 | accountant |
+| rachit@gmail.com   | Rachit    | 4321     | 2018-10-26 08:25:00 | admin      |
+| rahul@gmail.com    | Rahul     | 3344     | 2018-10-24 16:30:00 | cashier    |
+| ravi@gmail.com     | Ravi      | 2244     | 2018-10-19 09:10:00 | manager    |
+| shivani@gmail.com  | Shivani   | 5555     | 2018-10-27 09:30:00 | cashier    |
+| suresh@gmail.com   | Suresh    | 4433     | 2018-10-17 08:50:00 | salesman   |
+| vidit@gmail.com    | Vidit     | 1234     | 2018-10-31 12:40:00 | admin      |
++--------------------+-----------+----------+---------------------+------------+
+15 rows in set (0.00 sec)
+
+--Use Select * from inv_user; to show the table values;
