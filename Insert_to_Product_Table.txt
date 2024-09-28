@@ -1,0 +1,39 @@
+INSERT INTO product VALUES (1, 1, 1, 1, 'iPhone', 4, 45000, '2018-10-31');
+INSERT INTO product VALUES (2, 1, 2, 2, 'Galaxy S20', 6, 35000, '2018-10-30');
+INSERT INTO product VALUES (3, 1, 1, 1, 'MacBook', 3, 90000, '2018-10-29');
+INSERT INTO product VALUES (4, 2, 3, 4, 'Air Max', 6, 7000, '2018-10-28');
+INSERT INTO product VALUES (5, 3, 4, 5, 'Fortune Oil', 30, 750, '2018-10-27');
+INSERT INTO product VALUES (6, 9, 5, 6, 'Sony LED', 8, 40000, '2018-10-26');
+INSERT INTO product VALUES (7, 1, 1, 7, 'iPad', 5, 30000, '2018-10-25');
+INSERT INTO product VALUES (8, 2, 3, 8, 'Air Jordan', 10, 9000, '2018-10-24');
+INSERT INTO product VALUES (9, 3, 4, 9, 'Sunflower Oil', 20, 1700, '2018-10-23');
+INSERT INTO product VALUES (10, 1, 1, 10, 'Laptop', 5, 50000, '2018-10-22');
+INSERT INTO product VALUES (11, 6, 6, 11, 'T-shirt', 25, 15000, '2018-10-21');
+INSERT INTO product VALUES (12, 6, 3, 12, 'Shoes', 12, 5000, '2018-10-20');
+INSERT INTO product VALUES (13, 4, 4, 13, 'Cricket Bat', 10, 6000, '2018-10-19');
+INSERT INTO product VALUES (14, 2, 2, 14, 'Jeans', 20, 4000, '2018-10-18');
+INSERT INTO product VALUES (15, 3, 5, 15, 'Wheat Flour', 50, 1000, '2018-10-17');
+
+
++------------+-------------+----------+----------+---------------+-------------------+------------+---------------------+
+| product_id | category_id | brand_id | store_id | product_name  | quantity_in_stock | unit_price | added_on            |
++------------+-------------+----------+----------+---------------+-------------------+------------+---------------------+
+|          1 |           1 |        1 |        1 | iPhone        |                 4 |   45000.00 | 2018-10-31 00:00:00 |
+|          2 |           1 |        2 |        2 | Galaxy S20    |                 6 |   35000.00 | 2018-10-30 00:00:00 |
+|          3 |           1 |        1 |        1 | MacBook       |                 3 |   90000.00 | 2018-10-29 00:00:00 |
+|          4 |           2 |        3 |        4 | Air Max       |                 6 |    7000.00 | 2018-10-28 00:00:00 |
+|          5 |           3 |        4 |        5 | Fortune Oil   |                30 |     750.00 | 2018-10-27 00:00:00 |
+|          6 |           9 |        5 |        6 | Sony LED      |                 8 |   40000.00 | 2018-10-26 00:00:00 |
+|          7 |           1 |        1 |        7 | iPad          |                 5 |   30000.00 | 2018-10-25 00:00:00 |
+|          8 |           2 |        3 |        8 | Air Jordan    |                10 |    9000.00 | 2018-10-24 00:00:00 |
+|          9 |           3 |        4 |        9 | Sunflower Oil |                20 |    1700.00 | 2018-10-23 00:00:00 |
+|         10 |           1 |        1 |       10 | Laptop        |                 5 |   50000.00 | 2018-10-22 00:00:00 |
+|         11 |           6 |        6 |       11 | T-shirt       |                25 |   15000.00 | 2018-10-21 00:00:00 |
+|         12 |           6 |        3 |       12 | Shoes         |                12 |    5000.00 | 2018-10-20 00:00:00 |
+|         13 |           4 |        4 |       13 | Cricket Bat   |                10 |    6000.00 | 2018-10-19 00:00:00 |
+|         14 |           2 |        2 |       14 | Jeans         |                20 |    4000.00 | 2018-10-18 00:00:00 |
+|         15 |           3 |        5 |       15 | Wheat Flour   |                50 |    1000.00 | 2018-10-17 00:00:00 |
++------------+-------------+----------+----------+---------------+-------------------+------------+---------------------+
+15 rows in set (0.00 sec)
+
+--Use Select * from product; to show the table values;
