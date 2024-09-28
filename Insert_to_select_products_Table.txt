@@ -1,0 +1,39 @@
+INSERT INTO select_product VALUES (1, 1, 1);
+INSERT INTO select_product VALUES (2, 2, 3);
+INSERT INTO select_product VALUES (3, 3, 5);
+INSERT INTO select_product VALUES (4, 4, 4);
+INSERT INTO select_product VALUES (5, 5, 8);
+INSERT INTO select_product VALUES (6, 6, 10);
+INSERT INTO select_product VALUES (7, 7, 7);
+INSERT INTO select_product VALUES (8, 8, 6);
+INSERT INTO select_product VALUES (9, 9, 9);
+INSERT INTO select_product VALUES (10, 10, 11);
+INSERT INTO select_product VALUES (11, 11, 13);
+INSERT INTO select_product VALUES (12, 12, 15);
+INSERT INTO select_product VALUES (13, 13, 2);
+INSERT INTO select_product VALUES (14, 14, 4);
+INSERT INTO select_product VALUES (15, 15, 8);
+
+
++-----------+-------------+------------+
+| select_id | customer_id | product_id |
++-----------+-------------+------------+
+|         1 |           1 |          1 |
+|         2 |           2 |          3 |
+|         3 |           3 |          5 |
+|         4 |           4 |          4 |
+|         5 |           5 |          8 |
+|         6 |           6 |         10 |
+|         7 |           7 |          7 |
+|         8 |           8 |          6 |
+|         9 |           9 |          9 |
+|        10 |          10 |         11 |
+|        11 |          11 |         13 |
+|        12 |          12 |         15 |
+|        13 |          13 |          2 |
+|        14 |          14 |          4 |
+|        15 |          15 |          8 |
++-----------+-------------+------------+
+15 rows in set (0.00 sec)
+
+--Use Select * from select_product; to show the table values;
