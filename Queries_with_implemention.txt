@@ -1,0 +1,351 @@
+1)  What are all the available products in the store?
+--Retrieve all Products:
+SELECT * FROM product;
++------------+-------------+----------+----------+---------------+-------------------+------------+---------------------+
+| product_id | category_id | brand_id | store_id | product_name  | quantity_in_stock | unit_price | added_on            |
++------------+-------------+----------+----------+---------------+-------------------+------------+---------------------+
+|          1 |           1 |        1 |        1 | iPhone        |                 4 |   45000.00 | 2018-10-31 00:00:00 |
+|          2 |           1 |        2 |        2 | Galaxy S20    |                 6 |   35000.00 | 2018-10-30 00:00:00 |
+|          3 |           1 |        1 |        1 | MacBook       |                 3 |   90000.00 | 2018-10-29 00:00:00 |
+|          4 |           2 |        3 |        4 | Air Max       |                 6 |    7000.00 | 2018-10-28 00:00:00 |
+|          5 |           3 |        4 |        5 | Fortune Oil   |                30 |     750.00 | 2018-10-27 00:00:00 |
+|          6 |           9 |        5 |        6 | Sony LED      |                 8 |   40000.00 | 2018-10-26 00:00:00 |
+|          7 |           1 |        1 |        7 | iPad          |                 5 |   30000.00 | 2018-10-25 00:00:00 |
+|          8 |           2 |        3 |        8 | Air Jordan    |                10 |    9000.00 | 2018-10-24 00:00:00 |
+|          9 |           3 |        4 |        9 | Sunflower Oil |                20 |    1700.00 | 2018-10-23 00:00:00 |
+|         10 |           1 |        1 |       10 | Laptop        |                 5 |   50000.00 | 2018-10-22 00:00:00 |
+|         11 |           6 |        6 |       11 | T-shirt       |                25 |   15000.00 | 2018-10-21 00:00:00 |
+|         12 |           6 |        3 |       12 | Shoes         |                12 |    5000.00 | 2018-10-20 00:00:00 |
+|         13 |           4 |        4 |       13 | Cricket Bat   |                10 |    6000.00 | 2018-10-19 00:00:00 |
+|         14 |           2 |        2 |       14 | Jeans         |                20 |    4000.00 | 2018-10-18 00:00:00 |
+|         15 |           3 |        5 |       15 | Wheat Flour   |                50 |    1000.00 | 2018-10-17 00:00:00 |
++------------+-------------+----------+----------+---------------+-------------------+------------+---------------------+
+15 rows in set (0.01 sec)
+
+2) Which customers have items in their cart and what are those items?
+--Retrieve all Customers and their Cart Details:
+ SELECT * FROM customer_cart cc
+    JOIN select_product sp ON cc.customer_id = sp.customer_id;
+
++-------------+---------------+----------------+-----------+-------------+------------+
+| customer_id | customer_name | contact_number | select_id | customer_id | product_id |
++-------------+---------------+----------------+-----------+-------------+------------+
+|           1 | Vidit         |     9999111111 |         1 |           1 |          1 |
+|           2 | Harsh         |     8888222233 |         2 |           2 |          3 |
+|           3 | Prashant      |     7777333344 |         3 |           3 |          5 |
+|           4 | Abhishek      |     6666444455 |         4 |           4 |          4 |
+|           5 | Shivani       |     9999444466 |         5 |           5 |          8 |
+|           6 | Rachit        |     8888555566 |         6 |           6 |         10 |
+|           7 | Meera         |     7777666677 |         7 |           7 |          7 |
+|           8 | Rahul         |     6666777788 |         8 |           8 |          6 |
+|           9 | Pooja         |     9999888899 |         9 |           9 |          9 |
+|          10 | Aman          |     8888999911 |        10 |          10 |         11 |
+|          11 | Ajay          |     7777111122 |        11 |          11 |         13 |
+|          12 | Deepa         |     6666222233 |        12 |          12 |         15 |
+|          13 | Ravi          |     9999333344 |        13 |          13 |          2 |
+|          14 | Neha          |     8888111133 |        14 |          14 |          4 |
+|          15 | Suresh        |     7777444455 |        15 |          15 |          8 |
++-------------+---------------+----------------+-----------+-------------+------------+
+15 rows in set (0.01 sec)
+
+3) What are the details of a specific transaction and its corresponding invoice?
+--Retrieve Details of a Specific Transaction (1) and Corresponding Invoice:
+SELECT *
+FROM invoice i
+JOIN transaction t ON i.invoice_id = t.transaction_id
+WHERE t.transaction_id = 1;
++------------+--------------+----------+-------------+-------------+----------------+--------------+-------------+----------------+-------+----------+----------------+-----------+
+| invoice_id | product_name | quantity | total_price | customer_id | transaction_id | total_amount | amount_paid | balance_amount | tax   | discount | payment_method | select_id |
++------------+--------------+----------+-------------+-------------+----------------+--------------+-------------+----------------+-------+----------+----------------+-----------+
+|          1 | iPhone       |        1 |    45000.00 |           1 |              1 |    100000.00 |    50000.00 |       50000.00 | 18.00 |    10.00 | Card           |         1 |
++------------+--------------+----------+-------------+-------------+----------------+--------------+-------------+----------------+-------+----------+----------------+-----------+
+1 row in set (0.01 sec)
+
+4) Which products have low stock (less than 5 units)?
+--Retrieve Stock of Products:
+ SELECT product_name, quantity_in_stock FROM product WHERE quantity_in
+_stock< 5;
++--------------+-------------------+
+| product_name | quantity_in_stock |
++--------------+-------------------+
+| iPhone       |                 4 |
+| MacBook      |                 3 |
++--------------+-------------------+
+2 rows in set (0.01 sec)
+
+5)  What are the items in the cart for a specific customer?
+--Retrieve Customer Cart Details for a Specific Customer:
+ SELECT * FROM customer_cart cc
+     JOIN select_product sp ON cc.customer_id = sp.customer_id
+     WHERE cc.customer_id = 1;
++-------------+---------------+----------------+-----------+-------------+------------+
+| customer_id | customer_name | contact_number | select_id | customer_id | product_id |
++-------------+---------------+----------------+-----------+-------------+------------+
+|           1 | Vidit         |     9999111111 |         1 |           1 |          1 |
++-------------+---------------+----------------+-----------+-------------+------------+
+1 row in set (0.01 sec)
+
+6) Which products belong to a specific category?
+--Retrieve Products by a Specific Category: USED (1)
+ SELECT * FROM product WHERE category_id = 1;  -- Replace '1' with the desired customer ID
++------------+-------------+----------+----------+--------------+-------------------+------------+---------------------+
+| product_id | category_id | brand_id | store_id | product_name | quantity_in_stock | unit_price | added_on            |
++------------+-------------+----------+----------+--------------+-------------------+------------+---------------------+
+|          1 |           1 |        1 |        1 | iPhone       |                 4 |   45000.00 | 2018-10-31 00:00:00 |
+|          2 |           1 |        2 |        2 | Galaxy S20   |                 6 |   35000.00 | 2018-10-30 00:00:00 |
+|          3 |           1 |        1 |        1 | MacBook      |                 3 |   90000.00 | 2018-10-29 00:00:00 |
+|          7 |           1 |        1 |        7 | iPad         |                 5 |   30000.00 | 2018-10-25 00:00:00 |
+|         10 |           1 |        1 |       10 | Laptop       |                 5 |   50000.00 | 2018-10-22 00:00:00 |
++------------+-------------+----------+----------+--------------+-------------------+------------+---------------------+
+5 rows in set (0.00 sec)
+
+7)  What transactions have been made by a specific customer?
+--Retrieve All Transactions Made by a Specific Customer:
+SELECT * FROM transaction WHERE select_id = 1;  -- Replace '1' with the desired customer ID
++----------------+--------------+-------------+----------------+-------+----------+----------------+-----------+
+| transaction_id | total_amount | amount_paid | balance_amount | tax   | discount | payment_method | select_id |
++----------------+--------------+-------------+----------------+-------+----------+----------------+-----------+
+|              1 |    100000.00 |    50000.00 |       50000.00 | 18.00 |    10.00 | Card           |         1 |
++----------------+--------------+-------------+----------------+-------+----------+----------------+-----------+
+1 row in set (0.00 sec)
+
+8) What are all the products along with their respective brands?
+--Retrieve All Products with Their Corresponding Brand:
+ SELECT p.*, b.brand_name
+    FROM product p
+    JOIN brands b ON p.brand_id = b.brand_id;
++------------+-------------+----------+----------+---------------+-------------------+------------+---------------------+------------+
+| product_id | category_id | brand_id | store_id | product_name  | quantity_in_stock | unit_price | added_on            | brand_name |
++------------+-------------+----------+----------+---------------+-------------------+------------+---------------------+------------+
+|          1 |           1 |        1 |        1 | iPhone        |                 4 |   45000.00 | 2018-10-31 00:00:00 | Apple      |
+|          2 |           1 |        2 |        2 | Galaxy S20    |                 6 |   35000.00 | 2018-10-30 00:00:00 | Samsung    |
+|          3 |           1 |        1 |        1 | MacBook       |                 3 |   90000.00 | 2018-10-29 00:00:00 | Apple      |
+|          4 |           2 |        3 |        4 | Air Max       |                 6 |    7000.00 | 2018-10-28 00:00:00 | Nike       |
+|          5 |           3 |        4 |        5 | Fortune Oil   |                30 |     750.00 | 2018-10-27 00:00:00 | Fortune    |
+|          6 |           9 |        5 |        6 | Sony LED      |                 8 |   40000.00 | 2018-10-26 00:00:00 | Sony       |
+|          7 |           1 |        1 |        7 | iPad          |                 5 |   30000.00 | 2018-10-25 00:00:00 | Apple      |
+|          8 |           2 |        3 |        8 | Air Jordan    |                10 |    9000.00 | 2018-10-24 00:00:00 | Nike       |
+|          9 |           3 |        4 |        9 | Sunflower Oil |                20 |    1700.00 | 2018-10-23 00:00:00 | Fortune    |
+|         10 |           1 |        1 |       10 | Laptop        |                 5 |   50000.00 | 2018-10-22 00:00:00 | Apple      |
+|         11 |           6 |        6 |       11 | T-shirt       |                25 |   15000.00 | 2018-10-21 00:00:00 | Adidas     |
+|         12 |           6 |        3 |       12 | Shoes         |                12 |    5000.00 | 2018-10-20 00:00:00 | Nike       |
+|         13 |           4 |        4 |       13 | Cricket Bat   |                10 |    6000.00 | 2018-10-19 00:00:00 | Fortune    |
+|         14 |           2 |        2 |       14 | Jeans         |                20 |    4000.00 | 2018-10-18 00:00:00 | Samsung    |
+|         15 |           3 |        5 |       15 | Wheat Flour   |                50 |    1000.00 | 2018-10-17 00:00:00 | Sony       |
++------------+-------------+----------+----------+---------------+-------------------+------------+---------------------+------------+
+15 rows in set (0.00 sec)
+
+9) Which stores are located in a specific city?
+--Retrieve stores Details Based on their Location:
+SELECT * FROM stores WHERE store_address = 'Mumbai';  -- Replace 'Mum
+bai' with the desired city
++----------+--------------+---------------+---------------+
+| store_id | store_owner  | store_address | store_contact |
++----------+--------------+---------------+---------------+
+|        4 | Mohan Stores | Mumbai        |    6666333361 |
++----------+--------------+---------------+---------------+
+1 row in set (0.01 sec)
+
+10) What are the invoices related to a specific invoice?
+--Retrieve All Invoices for a Specific invoice:
+ SELECT * FROM invoice WHERE invoice_id = 1;  -- Replace '1' with the
+desired invoice ID
++------------+--------------+----------+-------------+-------------+
+| invoice_id | product_name | quantity | total_price | customer_id |
++------------+--------------+----------+-------------+-------------+
+|          1 | iPhone       |        1 |    45000.00 |           1 |
++------------+--------------+----------+-------------+-------------+
+1 row in set (0.00 sec) 
+
+11) Which products have prices greater than a specific amount?
+--Retrieve Products with Prices Above a Certain Value:
+ SELECT * FROM product WHERE unit_price > 1000;  -- Replace '1000' with the desired price
++------------+-------------+----------+----------+---------------+-------------------+------------+---------------------+
+| product_id | category_id | brand_id | store_id | product_name  | quantity_in_stock | unit_price | added_on            |
++------------+-------------+----------+----------+---------------+-------------------+------------+---------------------+
+|          1 |           1 |        1 |        1 | iPhone        |                 4 |   45000.00 | 2018-10-31 00:00:00 |
+|          2 |           1 |        2 |        2 | Galaxy S20    |                 6 |   35000.00 | 2018-10-30 00:00:00 |
+|          3 |           1 |        1 |        1 | MacBook       |                 3 |   90000.00 | 2018-10-29 00:00:00 |
+|          4 |           2 |        3 |        4 | Air Max       |                 6 |    7000.00 | 2018-10-28 00:00:00 |
+|          6 |           9 |        5 |        6 | Sony LED      |                 8 |   40000.00 | 2018-10-26 00:00:00 |
+|          7 |           1 |        1 |        7 | iPad          |                 5 |   30000.00 | 2018-10-25 00:00:00 |
+|          8 |           2 |        3 |        8 | Air Jordan    |                10 |    9000.00 | 2018-10-24 00:00:00 |
+|          9 |           3 |        4 |        9 | Sunflower Oil |                20 |    1700.00 | 2018-10-23 00:00:00 |
+|         10 |           1 |        1 |       10 | Laptop        |                 5 |   50000.00 | 2018-10-22 00:00:00 |
+|         11 |           6 |        6 |       11 | T-shirt       |                25 |   15000.00 | 2018-10-21 00:00:00 |
+|         12 |           6 |        3 |       12 | Shoes         |                12 |    5000.00 | 2018-10-20 00:00:00 |
+|         13 |           4 |        4 |       13 | Cricket Bat   |                10 |    6000.00 | 2018-10-19 00:00:00 |
+|         14 |           2 |        2 |       14 | Jeans         |                20 |    4000.00 | 2018-10-18 00:00:00 |
++------------+-------------+----------+----------+---------------+-------------------+------------+---------------------+
+13 rows in set (0.01 sec)
+
+12) What are the details of customer carts along with the product names?
+--Retrieve Customer Cart Details with Product Names:
+ SELECT cc.*, sp.product_id
+    FROM customer_cart cc
+    JOIN select_product sp ON cc.customer_id = sp.customer_id;
++-------------+---------------+----------------+------------+
+| customer_id | customer_name | contact_number | product_id |
++-------------+---------------+----------------+------------+
+|           1 | Vidit         |     9999111111 |          1 |
+|           2 | Harsh         |     8888222233 |          3 |
+|           3 | Prashant      |     7777333344 |          5 |
+|           4 | Abhishek      |     6666444455 |          4 |
+|           5 | Shivani       |     9999444466 |          8 |
+|           6 | Rachit        |     8888555566 |         10 |
+|           7 | Meera         |     7777666677 |          7 |
+|           8 | Rahul         |     6666777788 |          6 |
+|           9 | Pooja         |     9999888899 |          9 |
+|          10 | Aman          |     8888999911 |         11 |
+|          11 | Ajay          |     7777111122 |         13 |
+|          12 | Deepa         |     6666222233 |         15 |
+|          13 | Ravi          |     9999333344 |          2 |
+|          14 | Neha          |     8888111133 |          4 |
+|          15 | Suresh        |     7777444455 |          8 |
++-------------+---------------+----------------+------------+
+15 rows in set (0.01 sec)
+
+13) What is the total revenue generated from all sales?
+--Retrieve Total Revenue Generated from Sales:
+SELECT SUM(total_amount) AS total_revenue FROM transaction;
++---------------+
+| total_revenue |
++---------------+
+|    1395000.00 |
++---------------+
+1 row in set (0.01 sec)
+
+14) What is the total revenue generated from all sales?
+--Retrieve Total Revenue Generated from Sales:
+SELECT SUM(total_amount) AS total_revenue FROM transaction;
++---------------+
+| total_revenue |
++---------------+
+|    1395000.00 |
++---------------+
+1 row in set (0.01 sec)
+
+15) How many products does each brand offer?
+--Retrieve Brands and the Number of Products They Offer:
+ SELECT b.brand_name, COUNT(p.product_id) AS product_count
+     FROM brands b
+     LEFT JOIN product p ON b.brand_id = p.brand_id
+     GROUP BY b.brand_name;
++------------+---------------+
+| brand_name | product_count |
++------------+---------------+
+| Apple      |             4 |
+| Samsung    |             2 |
+| Nike       |             3 |
+| Fortune    |             3 |
+| Sony       |             2 |
+| Adidas     |             1 |
+| LG         |             0 |
+| Puma       |             0 |
+| Asus       |             0 |
+| HP         |             0 |
+| Dell       |             0 |
+| Panasonic  |             0 |
+| Lenovo     |             0 |
+| Philips    |             0 |
+| Realme     |             0 |
++------------+---------------+
+15 rows in set (0.01 sec)
+
+16) Which customers have not made any transactions?
+--Retrieve Customers with No Transactions:
+ SELECT * FROM customer_cart WHERE customer_id NOT IN (SELECT DISTINCT
+ customer_id FROM transaction);
+Empty set (0.01 sec)
+
+17) What are the details of customers along with the items in their carts?
+--Retrieve Customer Details Along with Their Cart Items:
+ SELECT
+         cc.customer_id,
+         cc.customer_name,
+         cc.contact_number,
+         sp.select_id,
+         sp.product_id,
+         p.product_name
+     FROM
+         customer_cart cc
+     JOIN
+         select_product sp ON cc.customer_id = sp.customer_id
+     JOIN
+         product p ON sp.product_id = p.product_id;
++-------------+---------------+----------------+-----------+------------+---------------+
+| customer_id | customer_name | contact_number | select_id | product_id | product_name  |
++-------------+---------------+----------------+-----------+------------+---------------+
+|           1 | Vidit         |     9999111111 |         1 |          1 | iPhone        |
+|           2 | Harsh         |     8888222233 |         2 |          3 | MacBook       |
+|           3 | Prashant      |     7777333344 |         3 |          5 | Fortune Oil   |
+|           4 | Abhishek      |     6666444455 |         4 |          4 | Air Max       |
+|           5 | Shivani       |     9999444466 |         5 |          8 | Air Jordan    |
+|           6 | Rachit        |     8888555566 |         6 |         10 | Laptop        |
+|           7 | Meera         |     7777666677 |         7 |          7 | iPad          |
+|           8 | Rahul         |     6666777788 |         8 |          6 | Sony LED      |
+|           9 | Pooja         |     9999888899 |         9 |          9 | Sunflower Oil |
+|          10 | Aman          |     8888999911 |        10 |         11 | T-shirt       |
+|          11 | Ajay          |     7777111122 |        11 |         13 | Cricket Bat   |
+|          12 | Deepa         |     6666222233 |        12 |         15 | Wheat Flour   |
+|          13 | Ravi          |     9999333344 |        13 |          2 | Galaxy S20    |
+|          14 | Neha          |     8888111133 |        14 |          4 | Air Max       |
+|          15 | Suresh        |     7777444455 |        15 |          8 | Air Jordan    |
++-------------+---------------+----------------+-----------+------------+---------------+
+15 rows in set (0.00 sec)
+
+18) What are the products along with their brand and category names?
+--Retrieve Products with Brand and Category Names:
+ SELECT p.product_name, b.brand_name, c.category_name
+     FROM product p
+     JOIN brands b ON p.brand_id = b.brand_id
+     JOIN categories c ON p.category_id = c.category_id;
++---------------+------------+---------------+
+| product_name  | brand_name | category_name |
++---------------+------------+---------------+
+| iPhone        | Apple      | Electronics   |
+| Galaxy S20    | Samsung    | Electronics   |
+| MacBook       | Apple      | Electronics   |
+| Air Max       | Nike       | Clothing      |
+| Fortune Oil   | Fortune    | Grocery       |
+| Sony LED      | Sony       | Appliances    |
+| iPad          | Apple      | Electronics   |
+| Air Jordan    | Nike       | Clothing      |
+| Sunflower Oil | Fortune    | Grocery       |
+| Laptop        | Apple      | Electronics   |
+| T-shirt       | Adidas     | Footwear      |
+| Shoes         | Nike       | Footwear      |
+| Cricket Bat   | Fortune    | Sports        |
+| Jeans         | Samsung    | Clothing      |
+| Wheat Flour   | Sony       | Grocery       |
++---------------+------------+---------------+
+15 rows in set (0.01 sec)
+
+ 19) What are the invoices along with the details of the customers who made them?
+--Retrieve Invoices with Corresponding Customer Details:
+SELECT i.*, c.customer_name AS customer_name
+     FROM invoice i
+     JOIN transaction t ON i.invoice_id = t.transaction_id
+     JOIN customer_cart c ON t.transaction_id = c.customer_id;
++------------+---------------+----------+-------------+-------------+---------------+
+| invoice_id | product_name  | quantity | total_price | customer_id | customer_name |
++------------+---------------+----------+-------------+-------------+---------------+
+|          1 | iPhone        |        1 |    45000.00 |           1 | Vidit         |
+|          2 | Galaxy S20    |        2 |    70000.00 |           2 | Harsh         |
+|          3 | MacBook       |        1 |    90000.00 |           3 | Prashant      |
+|          4 | Air Max       |        2 |    14000.00 |           4 | Abhishek      |
+|          5 | Fortune Oil   |        5 |     3750.00 |           5 | Shivani       |
+|          6 | Sony LED TV   |        2 |    80000.00 |           6 | Rachit        |
+|          7 | iPad          |        3 |    90000.00 |           7 | Meera         |
+|          8 | Air Jordan    |        3 |    18000.00 |           8 | Rahul         |
+|          9 | Sunflower Oil |        6 |     5100.00 |           9 | Pooja         |
+|         10 | Laptop        |        1 |    50000.00 |          10 | Aman          |
+|         11 | T-shirt       |       10 |    15000.00 |          11 | Ajay          |
+|         12 | Shoes         |        4 |    10000.00 |          12 | Deepa         |
+|         13 | Cricket Bat   |        3 |     6000.00 |          13 | Ravi          |
+|         14 | Jeans         |        5 |    10000.00 |          14 | Neha          |
+|         15 | Wheat Flour   |       10 |     5000.00 |          15 | Suresh        |
++------------+---------------+----------+-------------+-------------+---------------+
+15 rows in set (0.01 sec)
+
+
