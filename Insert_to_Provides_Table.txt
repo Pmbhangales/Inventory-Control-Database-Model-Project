@@ -1,0 +1,41 @@
+INSERT INTO provides VALUES (1, 1, 12);
+INSERT INTO provides VALUES (2, 2, 7);
+INSERT INTO provides VALUES (3, 3, 15);
+INSERT INTO provides VALUES (4, 4, 10);
+INSERT INTO provides VALUES (5, 5, 8);
+INSERT INTO provides VALUES (6, 6, 5);
+INSERT INTO provides VALUES (7, 7, 12);
+INSERT INTO provides VALUES (8, 8, 10);
+INSERT INTO provides VALUES (9, 9, 7);
+INSERT INTO provides VALUES (10, 10, 15);
+INSERT INTO provides VALUES (11, 11, 12);
+INSERT INTO provides VALUES (12, 12, 10);
+INSERT INTO provides VALUES (13, 13, 8);
+INSERT INTO provides VALUES (14, 14, 5);
+INSERT INTO provides VALUES (15, 15, 7);
+
+
+
++------------+------------+----------+
+| provide_id | product_id | store_id |
++------------+------------+----------+
+|          1 |          1 |       12 |
+|          2 |          2 |        7 |
+|          3 |          3 |       15 |
+|          4 |          4 |       10 |
+|          5 |          5 |        8 |
+|          6 |          6 |        5 |
+|          7 |          7 |       12 |
+|          8 |          8 |       10 |
+|          9 |          9 |        7 |
+|         10 |         10 |       15 |
+|         11 |         11 |       12 |
+|         12 |         12 |       10 |
+|         13 |         13 |        8 |
+|         14 |         14 |        5 |
+|         15 |         15 |        7 |
++------------+------------+----------+
+15 rows in set (0.00 sec)
+
+
+--Use Select * from provides; to show the table values;
